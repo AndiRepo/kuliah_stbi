@@ -104,7 +104,7 @@ $host='localhost';
 $user='root';
 $pass='';
 $database='dbstbi';
-$keyword=$_POST[keyword];;
+$keyword=$_POST['keyword'];;
 $conn=mysql_connect($host,$user,$pass);
 mysql_select_db($database);
 $resCache = mysql_query("SELECT *  FROM tbcache WHERE Query = '$keyword' ORDER BY Value DESC");
@@ -117,7 +117,7 @@ $resCache = mysql_query("SELECT *  FROM tbcache WHERE Query = '$keyword' ORDER B
 			$sim = $rowCache['Value'];
 					
 				//ambil berita dari tabel tbberita, tampilkan
-				//echo ">>>SELECT nama_file,deskripsi FROM upload WHERE nama_file = '$docId'";
+				echo ">>>SELECT nama_file,deskripsi FROM upload WHERE nama_file = '$docId'";
 				$resBerita = mysql_query("SELECT nama_file,deskripsi FROM upload WHERE nama_file = '$docId'");
 				$rowBerita = mysql_fetch_array($resBerita);
 					
